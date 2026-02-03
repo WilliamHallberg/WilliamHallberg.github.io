@@ -213,8 +213,8 @@ h1{
 }
 
 .HiddenUntilHover .ProjectEngineIcon{
-    width: 7.5rem;
-    height: 7.5rem;
+    /* width: 7.5rem;
+    height: 7.5rem; */
     position: absolute;
     bottom: 1rem;
     right: 1rem;
@@ -224,7 +224,7 @@ h1{
     width: 80%;
     position: absolute;
     left: 50%;
-    top: 50%;
+    top: 40%;
     transform: translate(-50%, -50%);
     text-align: center;
     font-size: 2.4rem;
