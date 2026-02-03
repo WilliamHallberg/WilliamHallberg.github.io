@@ -3,7 +3,8 @@
 
     --PrimaryColor:   #435a68;
     --SecondaryColor: #34393c;
-    --AccentColor:    #6a6f8d;
+    --AccentColor:    #a76b6b;
+    --TextColor:      #ffffff;
 }
 
 * {
@@ -19,13 +20,19 @@ html{
 
 body {
     background-color: var(--PrimaryColor);
-    color: white;
+    color: var(--TextColor);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+a{
+    color: var(--TextColor);
+    text-decoration: none;
 }
 
 .NavBar {
     position: sticky;
     top: 0;
+    z-index: 120;
     overflow: hidden;
     background-color: var(--SecondaryColor);
     padding: 0 1rem;
@@ -49,7 +56,7 @@ body {
 }
 
 .NavBarContainer a {
-    color: white;
+    color: var(--TextColor);
     text-decoration: none;
     margin: auto .5rem;
     font-weight: bold;
@@ -72,10 +79,24 @@ body {
     width: 100%;
     height: calc(100vh - var(--NavHeight));
     background-color: var(--PrimaryColor);
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background: linear-gradient(to top, rgba(52, 57, 60, 1) 5%, rgba(52, 57, 60, 0) 25%);
+}
+
+.BackgroundImage{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+img.BackgroundImage{
+    object-fit: cover;
 }
 
 h1{
@@ -89,35 +110,34 @@ h1{
 
 #Projects{
     width: 100%;
-    padding-top: var(--NavHeight);
+    padding-top: calc(var(--NavHeight) + 5rem);
+    padding-bottom: 20rem;
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
-    container: projects / size;
+    background: linear-gradient(to bottom, rgba(52, 57, 60, 1) 5%, rgba(52, 57, 60, 0) 25%, rgba(52, 57, 60, 0) 75%, rgba(52, 57, 60, 1) 95%);
 }
 
 .ProjectsContainer{
     position: relative;
     margin: 0 auto;
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 80%;
     gap: 5rem;
 }
 
-
-
-.ProjectsContainer img{
-    width: 100%;
-    height: auto;
+.ProjectsContainer .ProjectImage{
+    width: 30rem;
+    height: 30rem;
     border-radius: 1rem;
+    background-position: center;
+    background-size: cover;
     box-shadow: 0 0 1rem rgba(0,0,0,0.5);
     transition: all .3s ease-in-out;
-}
-
-.ProjectsContainer a {
-    width: 60%;
-    padding: 1rem;
 }
 
 .ProjectsContainer h1{
@@ -125,39 +145,97 @@ h1{
     top: -50%;
     left: 50%;
     transform: translateX(-50%);
-    color: white;
+    color: var(--TextColor);
     pointer-events: none;
 }
 
-.ProjectsContainer a:hover img{
-    transform: scale(1.1);
+.ProjectsContainer a:hover .ProjectImage{
+    transform: scale(1.05);
     box-shadow: 0 0 3rem rgba(0,0,0,1);
 }
+.ProjectsContainer a:hover .HiddenUntilHover{
+    opacity: 1;
+}
 
-@container projects (width > 105rem) {
+@media only screen and (min-width: 1200px) {
     .ProjectsContainer{
-        width: 100%;
-        flex-direction: row;
-        justify-content: space-evenly;
-        flex-wrap: wrap;
+        width: 75%;
     }
-    .ProjectsContainer img {
+    .ProjectsContainer .ProjectImage{
         width: 40rem;
-        margin: 2.5rem;
-    }
-
-    .ProjectsContainer a {
-        position: relative;
-        width: auto;
-        padding: 0;
-    }
-
-    .ProjectsContainer a:nth-child(2n - 1){
-        margin-bottom: -55rem;
+        height: 40rem;
     }
 }
-@container projects (width > 140rem) {
-    .ProjectsContainer{
-        width: 140rem;
-    }
+
+.ProjectBackground{
+    position: relative;
+    color: var(--TextColor);
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2.5rem;
+    background-color: var(--PrimaryColor);
+    box-shadow: 0 0 2rem rgba(0,0,0,0.5);
+    background: linear-gradient(0deg,rgba(52, 57, 60, 1) 85%, rgba(67, 90, 104, 1) 100%);
+    border-radius: 1rem;
+}
+
+.ProjectBackground h2{
+    margin-bottom: 2.5rem;
+    font-size: 2.8rem;
+}
+
+.HiddenUntilHover{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: flex-start;
+    gap: 1rem;
+    opacity: 0;
+    border-radius: 1rem;
+    background-color: rgba(0,0,0,0.65);
+    transition: opacity .3s ease-in-out;
+}
+
+.HiddenUntilHover .ProjectPlatforms{
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    padding: 1rem;
+}
+
+.HiddenUntilHover img{
+    width: 5rem;
+    height: 5rem;
+}
+
+.HiddenUntilHover .ProjectEngineIcon{
+    width: 7.5rem;
+    height: 7.5rem;
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+}
+
+.HiddenUntilHover h3{
+    width: 80%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-size: 2.4rem;
+    font-weight: bolder;
+}
+
+footer{
+    width: 100%;
+    height: var(--NavHeight);
+    background-color: var(--SecondaryColor);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
