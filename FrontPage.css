@@ -213,11 +213,12 @@ h1{
 }
 
 .HiddenUntilHover .ProjectEngineIcon{
-    /* width: 7.5rem;
-    height: 7.5rem; */
     position: absolute;
     bottom: 1rem;
     right: 1rem;
+}
+.HiddenUntilHover #TengineIcon{
+    width: auto;
 }
 
 .HiddenUntilHover h3{
