@@ -5,9 +5,10 @@
     position: relative;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    justify-content: flex-end;
+    align-items: flex-start;
     background: transparent;
+    padding: 8rem;
 }
 
 .BackgroundImage{
@@ -20,6 +21,7 @@
 }
 img.BackgroundImage{
     object-fit: cover;
+    filter: blur(.8rem) brightness(75%);
 }
 
 h1{
@@ -28,7 +30,12 @@ h1{
 }
 
 #Welcome h2{
-    font-size: 2.4rem;
+    font-size: 4rem;
+}
+
+#Welcome h1{
+    font-size: 8rem;
+    margin: 0;
 }
 
 #Projects{
@@ -60,6 +67,7 @@ h1{
     background-position: center;
     background-size: cover;
     transition: all var(--DefaultTransitionTime) ease-in-out;
+    overflow: hidden;
 }
 
 .ProjectsContainer h1{
@@ -106,8 +114,9 @@ h1{
     justify-content: flex-start;
     gap: 1rem;
     opacity: 0;
+    backdrop-filter: blur(.4rem);
     border-radius: 1rem;
-    background-color: rgba(0,0,0,0.65);
+    background-color: rgba(0,0,0,0.5);
     transition: opacity var(--DefaultTransitionTime) ease-in-out;
 }
 

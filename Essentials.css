@@ -27,7 +27,7 @@ a {
 }
 
 body {
-    background-color: var(--PrimaryColor);
+    background-color: var(--SecondaryColor);
     color: var(--TextColor);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
@@ -37,20 +37,24 @@ body {
     top: 0;
     z-index: 120;
     overflow: hidden;
-    background-color: var(--SecondaryColor);
+    background-color: color-mix(in srgb, var(--SecondaryColor), transparent 40%);
     padding: 0 1rem;
     text-align: center;
     width: 100%;
     height: var(--NavHeightBig);
-    transition: height var(--DefaultTransitionTime) ease, border-bottom-width 0.05s ease;
     display: flex;
     justify-content: flex-end;
     align-items: center;
+
+    transition: height              var(--DefaultTransitionTime) ease,
+                background-color    var(--DefaultTransitionTime) ease,  
+                border-bottom-width 0.05s                        ease;
 }
 
 #NavBar.shrink {
     height: var(--NavHeight);
     border-bottom: .5rem solid var(--AccentColor);
+    background-color: color-mix(in srgb, var(--SecondaryColor), transparent 0%);
 }
 
 #NavBar h1 {
