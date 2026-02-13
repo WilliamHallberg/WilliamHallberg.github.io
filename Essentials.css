@@ -1,0 +1,126 @@
+:root {
+    --NavHeight: 6.5rem;
+    --NavHeightBig: 10rem;
+
+    --DefaultTransitionTime: .25s;
+
+    --PrimaryColor:   #435a68;
+    --SecondaryColor: #34393c;
+    --AccentColor:    #a76b6b;
+    --TextColor:      #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 62.5%;
+}
+
+a {
+    color: var(--TextColor);
+    text-decoration: none;
+}
+
+body {
+    background-color: var(--PrimaryColor);
+    color: var(--TextColor);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#NavBar {
+    position: fixed;
+    top: 0;
+    z-index: 120;
+    overflow: hidden;
+    background-color: var(--SecondaryColor);
+    padding: 0 1rem;
+    text-align: center;
+    width: 100%;
+    height: var(--NavHeightBig);
+    transition: height var(--DefaultTransitionTime) ease, border-bottom-width 0.05s ease;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+#NavBar.shrink {
+    height: var(--NavHeight);
+    border-bottom: .5rem solid var(--AccentColor);
+}
+
+#NavBar h1 {
+    position: absolute;
+    left: 2.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 3.6rem;
+}
+
+.NavBarContainer {
+    margin-left: 2.4rem;
+}
+
+.NavBarContainer a {
+    color: var(--TextColor);
+    text-decoration: none;
+    margin: auto .5rem;
+    font-weight: bold;
+    font-size: 2.4rem;
+    padding: 1rem 1.5rem;
+    border-radius: .5rem;
+    transition: all var(--DefaultTransitionTime) ease;
+}
+
+#NavBar div:last-of-type a {
+    font-size: 3.2rem;
+    margin: auto .5rem;
+    padding: .5rem;
+}
+.NavBarContainer a:hover {
+    background-color: var(--AccentColor);
+}
+
+footer {
+    width: 100%;
+    background-color: var(--SecondaryColor);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-;
+    align-items: center;
+    gap: 2rem;
+    padding: 4rem 0;
+}
+
+footer h2 {
+    font-size: 3rem;
+}
+
+footer a[href^="tel:"], footer a[href^="mailto:"] {
+    font-size: 1.5rem;
+    text-decoration: underline;
+    transition: color, var(--DefaultTransitionTime) ease;
+}
+
+footer a[href^="tel:"]:hover, footer a[href^="mailto:"]:hover {
+    color: rgb(160, 160, 160);
+}
+
+footer .FooterIconLinks a {
+    color: var(--AccentColor);
+    text-decoration: none;
+    margin: 0 .5rem;
+    font-weight: bold;
+    font-size: 4rem;
+    padding: .5rem;
+    border-radius: .5rem;
+    transition: background-color var(--DefaultTransitionTime) ease;
+}
+
+footer .FooterIconLinks a:hover {
+    background-color: rgba(0, 0, 0, .25);
+}
