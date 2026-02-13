@@ -7,7 +7,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(to top, rgba(52, 57, 60, 1) 0%, rgba(52, 57, 60, 0) 10%);
+    background: transparent;
 }
 
 .BackgroundImage{
