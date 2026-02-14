@@ -1,4 +1,5 @@
 const nav = document.getElementById("NavBar");
+const img = document.getElementById('ParallaxBanner');
 
 window.onscroll = function()
 {
@@ -13,3 +14,9 @@ window.onscroll = function()
         nav.classList.remove("shrink");
     }
 };
+
+window.addEventListener('scroll', function() {
+    let value = window.scrollY;
+    
+    img.style.transform = `translateY(${value * 0.25}px)`; 
+});
