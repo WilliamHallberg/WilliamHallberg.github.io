@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>William Hallberg - Portfolio</title>
+    <link rel="icon" type="image/png" href="../Images/William_Icon.png">
+
+    <link rel="stylesheet" href="../Essentials.css">
+    <link rel="stylesheet" href="Projects.css">
+    
+    <script src="https://kit.fontawesome.com/5a78fd3e4e.js" crossorigin="anonymous"></script>
+    <script src="../Essentials.js" defer></script>
+</head>
+
+<body>
+<header id="NavBar">
+    <h1 class="TitleName">William Hallberg</h1>
+
+    <div class="NavItems NavBarContainer">
+        <a href="../FrontPage.html#" class="NavItem">home</a>
+        <a href="../FrontPage.html#Projects" class="NavItem">projects</a>
+        <a href="../AboutMe.html" class="NavItem">about me</a>
+    </div> 
+    
+    <div class="NavLinks NavBarContainer">
+        <a href="https://www.linkedin.com/in/william-hallberg-b600aa290/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="https://wikkha.itch.io/" target="_blank"><i class="fa-brands fa-itch-io"></i></a>
+    </div>
+</header>
+
+<!-- BODY Start -->
+
+<section id="Welcome">
+    <img src="../Images/Projects/PP2/PP2WelcomeBanner.png" alt="" class="BackgroundImage" id="ParallaxBanner">
+    <div class="ProjectInformationContainer">
+        <h2>Resource Management</h2>
+        <div class="ProjectInformation">
+            <h3>Genre:</h3>         <h3>System/Tool</h3>
+            <h3>Engine:</h3>        <h3>Unity</h3>
+            <h3>Platform(s):</h3>   <h3>PC</h3>
+            <h3>Team Size:</h3>     <h3>1</h3>
+            <h3>Duration:</h3>      <h3>4 Weeks</h3>
+        </div>
+    </div>
+</section>
+
+<section id="ProjectDescription">
+
+    <div class="DescriptionPart">
+        <div>
+            <h3>Items</h3>
+            <p> The items in this project were made to be <b>Scriptable Objects (SO)</b> to help seperate the data from the scripts. 
+                This, in turn, also makes it <b>easier for designers</b> to add, remove and change items as necessary without having to go digging through the code itself. 
+                Additionally, this abstraction <b>helps shorten the amount of code needed</b>. 
+                Since every item is in essence an <i>ItemData SO</i>, only a single generic function is needed to implement a behavior, instead of needing one function for every item type. 
+                <br><br>
+                Furthermore, <b>inheritance</b> is used to allow for more complex items, such as tools. 
+                Since tools derives from items, they have the <b>same base functionality as items by default</b>. 
+                However, they can also have <b>extra logic added on top</b>. 
+                In the case of tools, the extra data is used to describe their damage, type, tier and attack speed.
+                To access this data, an <i>ItemType</i> enum is being stored in the base <i>ItemData SO</i>.
+                This enum can be used to determine what type to cast the item to, giving full access to its data on demand.
+            </p>
+        </div>
+        <div class="MediaWrapper">
+            <img src="../Images/Projects/PP2/Items.png" alt="">
+        </div>
+    </div>
+
+    <div class="DescriptionPart">
+        <div>
+            <h3>Resource Nodes</h3>
+            <p> Resource node is the generic name for an <b>object that can be damaged and harvested</b> in order to recieve items.
+                This script is able to <b>attach to any sort of mesh or object</b> that is wanted.
+                On top of this, <b>all of the important variables are serialized</b>, allowing for easy iteration and saving in the form of prefabs. 
+                The simplest variables handle things such as: health, hardness, required tool type(s) (flags), and how many times it can be harvested before it breaks.
+                <br><br>
+                The <i>DropsTable</i>, on the other hand, is a bit more invloved.
+                It's an <b>array of structs</b> that hold the item that drops, how many of them to drop, and when to drop them.
+                The amount is a <i>Vector2Int</i> that describes the upper and lower limit of what to randomize.
+                Whereas, <i>WhenToDrop</i> is an enum that, unsuprisingly, describes when to drop the item.
+                The options for this are: <i>EveryTime</i>, <i>RandomChance</i>, <i>EveryNthTime</i>, and <i>OnlyOnce</i>.
+                <br><br>
+                Every time the node's health gets depleted, it gets harvested, and the health gets restored.
+                The harvesting part is what loops through all of the drops, checking if <i>WhenToDrop</i> applies, and if so, it randomizes a number between the lower and upper drop amount, finally, it tries to add it to the inventory that last interacted with the node.
+            </p>
+        </div>
+        <div class="MediaWrapper">
+            <video autoplay loop muted playsinline src="../Images/Projects/PP2/ResourceNode.webm"></video> <!-- Add Poster? -->
+        </div>
+    </div>
+
+</section>
+
+<!-- BODY End -->
+
+<footer>
+    <h2>William Hallberg</h2>
+    
+    <a href="mailto:william.hallberg06@gmail.com">william.hallberg06@gmail.com</h3></a>
+    <a href="tel:+468989139">(+46) 76-898 91 39</a>
+
+    <div class="FooterIconLinks">
+        <a href="https://www.linkedin.com/in/william-hallberg-b600aa290/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="https://wikkha.itch.io/" target="_blank"><i class="fa-brands fa-itch-io"></i></a>
+    </div>
+
+    <div class="PeakImage">
+        <img src="../Images/William_Peak.png" alt="Me drawn as a PEAK scout">
+
+        <div class="SadText">
+            Drawing of me, by
+            <a href="https://www.artstation.com/lil-sinon" target="_blank">Klara Jug</a>
+        </div>
+        
+    </div>
+</footer>
+</body>
+
+</html>

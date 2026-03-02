@@ -1,0 +1,107 @@
+#Welcome{
+    width: 100%;
+    height: 100vh;
+    background-color: var(--PrimaryColor);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    background: transparent;
+    padding: 8rem;
+}
+
+.BackgroundImage{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+img.BackgroundImage{
+    object-fit: cover;
+    filter: blur(.8rem) brightness(75%);
+}
+
+div.ProjectInformationContainer{
+    background-color: color-mix(in srgb, var(--SecondaryColor), transparent 30%);
+    border-radius: 1rem;
+    padding: 3rem 4rem;
+}
+
+div.ProjectInformationContainer h2{
+    font-size: 3.6rem;
+    margin-bottom: 2rem;
+}
+
+div.ProjectInformationContainer h3{
+    font-size: 2.4rem;
+}
+
+div.ProjectInformationContainer .ProjectInformation{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    row-gap: .5rem;
+    column-gap: 1rem;
+}
+
+#ProjectDescription{
+    background-color: var(--PrimaryColor);
+    width: 100%;
+    padding-top: 5rem; 
+    padding-bottom: 5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5rem;
+    border-top: .5rem solid var(--AccentColor);
+    border-bottom: .5rem solid var(--AccentColor);
+}
+
+.DescriptionPart{
+    background-color: color-mix(in srgb, var(--SecondaryColor), transparent 30%);
+    border-radius: 1rem;
+    padding: 3rem 4rem;
+    width: 80%;
+    display: grid;
+    grid-template-columns: 1.25fr 1fr;
+    gap: 3rem;
+    text-align: justify;
+}
+
+.DescriptionPart:nth-of-type(2n){
+    direction: rtl;
+}
+
+.DescriptionPart:nth-of-type(2n) > *{
+    direction: ltr;
+}
+
+.DescriptionPart h3{
+    font-size: 3.6rem;
+    margin-bottom: 1rem;
+}
+
+.DescriptionPart p{
+    font-size: 2rem;
+}
+
+b{
+    font-weight: 800;
+}
+
+.DescriptionPart .MediaWrapper{
+    height: fit-content;
+    margin: auto 0;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 1rem;
+}
+
+.DescriptionPart .MediaWrapper img, .DescriptionPart .MediaWrapper video{
+    height: auto;
+    width: 100%;
+    object-position: center;
+    object-fit: contain;
+}

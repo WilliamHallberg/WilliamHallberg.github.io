@@ -4,10 +4,11 @@
 
     --DefaultTransitionTime: .25s;
 
-    --PrimaryColor:   #435a68;
+    --PrimaryColor:   #424f57;
     --SecondaryColor: #34393c;
     --AccentColor:    #a76b6b;
     --TextColor:      #ffffff;
+    --DarkerTextColor:#c0c0c0;
 }
 
 * {
