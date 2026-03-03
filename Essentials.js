@@ -1,4 +1,5 @@
 const nav = document.getElementById("NavBar");
+const arr = document.getElementById("DownArrow");
 const img = document.getElementById('ParallaxBanner');
 
 window.onscroll = function()
@@ -8,10 +9,12 @@ window.onscroll = function()
     if (scrollPos > 60)
     {
         nav.classList.add("shrink");
+        arr.classList.add("Hidden");
     }
     else if (scrollPos < 20)
     {
         nav.classList.remove("shrink");
+        arr.classList.remove("Hidden");
     }
 };
 

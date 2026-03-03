@@ -4,11 +4,11 @@
     background-color: var(--PrimaryColor);
     position: relative;
     display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    align-items: flex-start;
+    flex-direction: row;
+    align-items: flex-end;
     background: transparent;
     padding: 8rem;
+    gap: 2.5rem;
 }
 
 .BackgroundImage{
@@ -19,23 +19,43 @@
     height: 100%;
     z-index: -1;
 }
+
 img.BackgroundImage{
     object-fit: cover;
     filter: blur(.8rem) brightness(75%);
+}
+
+h2.ProjectTitle{
+    position: absolute;
+    left: 50%;
+    top: 30%;
+    transform: translateX(-50%) translateY(-50%);
+    font-size: 5.2rem;
+}
+
+div.SillyGrid{
+    width: 75%;
+    height: fit-content;
+    display: grid;
+    align-items: end;
+    grid-template-columns: 1fr 2fr;
+    gap: 2.5rem;
 }
 
 div.ProjectInformationContainer{
     background-color: color-mix(in srgb, var(--SecondaryColor), transparent 30%);
     border-radius: 1rem;
     padding: 3rem 4rem;
+    height: fit-content;
 }
 
 div.ProjectInformationContainer h2{
-    font-size: 3.6rem;
-    margin-bottom: 2rem;
+    font-size: 3.2rem;
+    margin-bottom: 1rem;
+    text-decoration: underline;
 }
 
-div.ProjectInformationContainer h3{
+div.ProjectInformationContainer h3, div.ProjectInformationContainer p{
     font-size: 2.4rem;
 }
 
@@ -44,6 +64,12 @@ div.ProjectInformationContainer .ProjectInformation{
     grid-template-columns: 1fr 1fr;
     row-gap: .5rem;
     column-gap: 1rem;
+}
+
+div.SillyClass{
+    display: flex;
+    justify-content: space-between;
+    gap: 5rem;
 }
 
 #ProjectDescription{

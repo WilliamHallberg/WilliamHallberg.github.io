@@ -35,17 +35,34 @@
 <!-- BODY Start -->
 
 <section id="Welcome">
+
     <img src="../Images/Projects/PP2/PP2WelcomeBanner.png" alt="" class="BackgroundImage" id="ParallaxBanner">
-    <div class="ProjectInformationContainer">
-        <h2>Resource Management</h2>
-        <div class="ProjectInformation">
-            <h3>Genre:</h3>         <h3>System/Tool</h3>
-            <h3>Engine:</h3>        <h3>Unity</h3>
-            <h3>Platform(s):</h3>   <h3>PC</h3>
-            <h3>Team Size:</h3>     <h3>1</h3>
-            <h3>Duration:</h3>      <h3>4 Weeks</h3>
+
+    <a href="#ProjectDescription" class="SillyClickableArrow" ><i class="fa-solid fa-arrow-down" id="DownArrow"></i></a>
+
+    <h2 class="ProjectTitle">Resource Management</h2>
+
+    <div class="SillyGrid">
+        <div class="ProjectInformationContainer">
+            <h2 class="SmallerTitle">Info</h2>
+            <div class="ProjectInformation">
+                <h3>Genre:</h3>         <h3>System/Tool</h3>
+                <h3>Engine:</h3>        <h3>Unity</h3>
+                <h3>Platform(s):</h3>   <h3>PC</h3>
+                <h3>Team Size:</h3>     <h3>1</h3>
+                <h3>Duration:</h3>      <h3>4 Weeks</h3>
+            </div>
+        </div>
+
+        <div class="ProjectInformationContainer">
+            <div class="ProjectDescription">
+                <h2 class="SmallerTitle">Project Overview</h2>
+                <p> The goal of this specialisation project was for me to explore my interests in, research, and implement a resource management system similar to what's found in games such as Satisfactory, Factorio, Valheim, Rust, and many more.
+                </p>
+            </div>
         </div>
     </div>
+
 </section>
 
 <section id="ProjectDescription">
@@ -73,6 +90,27 @@
 
     <div class="DescriptionPart">
         <div>
+            <h3>Inventories</h3>
+            <p> The inventories are made up of <b>dictionaries</b>.
+                Specifically a <i>Dictionary&lt;slotID, InventorySlot&gt;</i>, where <i>InventorySlot</i> is a struct containing the item type and an amount.
+                These inventories have functions for adding items, removing items, dropping items, and more.
+                Most of the time, this is able to be handled internally within the inventory iteself with the use of slot indices.
+                The tricky part appears when moving things between inventories.
+                To solve this issue, I made an <i>InventoryHelper</i> class that holds static functions for moving items, splitting items, and filling items.
+                This solution combines moving items internally in the same inventory and externally between inventories into one function.
+                <br><br>
+                In the video on the left, you can see the different features this inventory system has.
+                <br>
+                And yes, the <i>Inventory</i> and <i>InventoryUI</i> are two seperate parts.
+            </p>
+        </div>
+        <div class="MediaWrapper">
+            <img src="../Images/Projects/PP2/Items.png" alt="">
+        </div>
+    </div>
+
+    <div class="DescriptionPart">
+        <div>
             <h3>Resource Nodes</h3>
             <p> Resource node is the generic name for an <b>object that can be damaged and harvested</b> in order to recieve items.
                 This script is able to <b>attach to any sort of mesh or object</b> that is wanted.
@@ -87,6 +125,50 @@
                 <br><br>
                 Every time the node's health gets depleted, it gets harvested, and the health gets restored.
                 The harvesting part is what loops through all of the drops, checking if <i>WhenToDrop</i> applies, and if so, it randomizes a number between the lower and upper drop amount, finally, it tries to add it to the inventory that last interacted with the node.
+            </p>
+        </div>
+        <div class="MediaWrapper">
+            <video autoplay loop muted playsinline src="../Images/Projects/PP2/ResourceNode.webm"></video> <!-- Add Poster? -->
+        </div>
+    </div>
+
+    <div class="DescriptionPart">
+        <div>
+            <h3>Automatic Harvesters</h3>
+            <p> As a proof of concept and to better show the <b>versitility of my code</b>, I decided to implement automatic harvesters.
+                These harvesters work by having a trigger that detects the resources within its "area of effect".
+                It then selects one at random, damaging it continuously until it gets harvested, and its items get deposited into the harvester.
+                As with everything else so far, the variables for <b>this script can be changed to fit different use cases</b>.
+                It has the same attribues as tools with its damage, tier and types, so as to more easily integrate into the already established damage function.
+                <br><br>
+                Additionally, the harvesters have <b>two inventories</b>.
+                One for inputs, and one for outputs.
+                The one for outputs is just a normal inventory. Whereas, the one for inputs is a bit different.
+                <b>Inputs are optional</b>, depending on the use case, you could have either no input or one input.
+                When inputs are enabled, you get to specify what kind of item to input and how many are needed.
+            </p>
+        </div>
+        <div class="MediaWrapper">
+            <video autoplay loop muted playsinline src="../Images/Projects/PP2/ResourceNode.webm"></video> <!-- Add Poster? -->
+        </div>
+    </div>
+
+        <div class="DescriptionPart">
+        <div>
+            <h3>Recipes & Crafting</h3>
+            <p> To give even more uses for items, I decided that adding crafting was the logical next step.
+                This system works by using recipes.
+                Recipes are <b>scriptable objects</b> that contain an array of input items, and an array of output items.
+                An input only describes an item and its amount, while an output describes: the item, a min and max amount, and a <i>WhenToOutput</i> emum, with the values of <i>Always</i> and <i>RandomChance</i>.
+                On top of this, each recipe also has a crafting time, tier and categories.
+                The tier and categories are to split up the recipes so that different "crafters" only have access to certain recipes.
+                For example, a furnace might only have access to smelting recipes, and an anvil might only have access to smithing recipes.
+                <br><br>
+                To go along with the recipes, I also made <b>automatic crafters</b>.
+                They also have a tier and categories, like the recipes.
+                These are used to find all the recipes that should be visible and useable by the crafter.
+                After selecting a recipe, the crafter looks for the correct items and amounts in the inputs before crafting to start crafting.
+                After which, it removes the inputs, and adds the outputs.
             </p>
         </div>
         <div class="MediaWrapper">

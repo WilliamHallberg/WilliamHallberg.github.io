@@ -151,6 +151,34 @@ footer div.PeakImage a {
     text-decoration: underline;
 }
 
+#DownArrow{
+    margin: auto;
+    animation: bobbing 1.5s ease-in-out infinite;
+    transition: opacity .2s ease-in-out;
+}
+
+#DownArrow.Hidden{
+    opacity: 0;
+}
+
+a.SillyClickableArrow{
+    width: 12rem;
+    height: 12rem;
+    font-size: 10rem;
+    position: absolute;
+    right: 5rem;
+    bottom: 3rem;
+}
+
+@keyframes bobbing {
+    0%, 100% {
+        transform: translateY(-1.5rem);
+    }
+    45%, 55% {
+        transform: translateY(0);
+    }
+}
+
 @media only screen and (min-width: 1000px) {
     footer {
         align-items: center ;
