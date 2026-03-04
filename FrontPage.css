@@ -42,7 +42,7 @@ h1{
     width: 100%;
     padding-top: 5rem;
     padding-bottom: 8rem;
-    background-color: var(--PrimaryColor);
+    background-color: var(--SecondaryColor);
     position: relative;
     display: flex;
     flex-direction: column;
@@ -56,9 +56,9 @@ h1{
     margin: 0 auto;
     display: grid;
     grid-template-columns: max-content;
-    justify-content: space-evenly;
+    justify-content: center;
     width: 100%;
-    gap: 5rem;
+    gap: 6rem;
 }
 
 .ProjectsContainer .ProjectImage{
@@ -95,11 +95,16 @@ h1{
     flex-direction: column;
     align-items: center;
     padding: 3rem 4rem;
-    background-color: color-mix(in srgb, var(--SecondaryColor), transparent 30%);
+    background-color: color-mix(in srgb, var(--PrimaryColor), transparent 50%);
+    backdrop-filter: blur(.25rem);
     /* background-color: var(--PrimaryColor); */
     /* box-shadow: 0 0 2rem rgba(0,0,0,0.5);
     background: linear-gradient(0deg,rgba(52, 57, 60, 1) 85%, rgba(67, 90, 104, 1) 100%); */
     border-radius: 1rem;
+}
+
+.ProjectBackground > *{
+    filter: 0;
 }
 
 .ProjectBackground h2{
