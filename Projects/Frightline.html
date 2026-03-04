@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>William Hallberg - Portfolio</title>
+    <link rel="icon" type="image/png" href="../Images/William_Icon.png">
+
+    <link rel="stylesheet" href="../Essentials.css">
+    <link rel="stylesheet" href="Projects.css">
+    
+    <script src="https://kit.fontawesome.com/5a78fd3e4e.js" crossorigin="anonymous"></script>
+    <script src="../Essentials.js" defer></script>
+</head>
+
+<body>
+<header id="NavBar">
+    <h1 class="TitleName">William Hallberg</h1>
+
+    <div class="NavItems NavBarContainer">
+        <a href="../#" class="NavItem">home</a>
+        <a href="../#Projects" class="NavItem">projects</a>
+        <a href="../AboutMe.html" class="NavItem">about me</a>
+    </div> 
+    
+    <div class="NavLinks NavBarContainer">
+        <a href="https://www.linkedin.com/in/william-hallberg-b600aa290/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="https://wikkha.itch.io/" target="_blank"><i class="fa-brands fa-itch-io"></i></a>
+    </div>
+</header>
+
+<!-- BODY Start -->
+
+<section id="Welcome">
+
+    <img src="../Images/Projects/Frightline/WelcomeBanner.png" alt="" class="BackgroundImage" id="ParallaxBanner">
+
+    <a href="#ProjectDescription" class="SillyClickableArrow" ><i class="fa-solid fa-arrow-down" id="DownArrow"></i></a>
+
+    <h2 class="ProjectTitle">Frightline</h2>
+
+    <div class="SillyGrid">
+        <div class="ProjectInformationContainer">
+            <h2 class="SmallerTitle">Info</h2>
+            <div class="ProjectInformation">
+                <h3>Genre:</h3>         <h3>Horror Puzzle</h3>
+                <h3>Engine:</h3>        <h3>Unity</h3>
+                <h3>Platform(s):</h3>   <h3>PC</h3>
+                <h3>Team Size:</h3>     <h3>16</h3>
+                <h3>Duration:</h3>      <h3>9 Weeks</h3>
+            </div>
+        </div>
+
+        <div class="ProjectInformationContainer">
+            <div class="ProjectDescription">
+                <h2 class="SmallerTitle">Project Overview</h2>
+                <p> Frightline was our third <b>game project</b> at <i>PlaygroundSquad</i>.
+                    Frightline is an atmospheric horror, puzzle, adventure experience where you explore a seemingly endless train. 
+                    To progress forward you have to utilize both your physical doll form, but also a spirit form.
+                    Along the way, having to hide and run from the train conductor that tries to halt your journey.
+                </p>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+<section id="ProjectDescription">
+
+    <div class="DescriptionPart">
+        <div>
+            <h3>Player Controllers</h3>
+            <p> The fact that we wanted to have two main "player states", a physical doll and a spirit, lead to some interesting problems and solutions.
+                Not wanting to limit any design decisions, yet still wanting to have as little repeat code as possible, making generic scripts was an obvious solution.
+                The best example of this is how I made the movement.
+                It's made up of 3 scripts, <i>CommonMovement</i>, <i>PlayerMovement</i>, and <i>SpiritMovement</i>.
+                Where common handles the things both player and spirit should be able to do, like inputs, basic movement, animation states, etc.
+                <i>Player-</i> and <i>SpiritMovement</i> then inherit <i>CommonMovement</i>, adding their own spin on things on top of the base.
+                <br><br>
+                On top of this, theres a more abstract third state the player can be in, possession.
+                The spirit has the ability to "possess" certain objects in the world, allowing it to control them in different ways.
+                A few examples being, boxes that are moveable to access new areas, or levers that can be pulled to open doors.
+                <br><br>
+                Another big part of the controller is the <i>Player</i> <b>singleton</b> class.
+                It handles the physical and spirit references and the switching between them.
+                The structure for this was set up by me, and then added upon by others in the team.
+            </p>
+        </div>
+        <div class="MediaWrapper">
+            <video autoplay loop muted playsinline src="../Images/Projects/Frightline/WalkingAroundALot.webm"></video> <!-- Add Poster? -->
+        </div>
+    </div>
+
+    <div class="DescriptionPart">
+        <div>
+            <h3>Interaction System</h3>
+            <p> The interaction in this game works by having a sphere trigger that detects objects with the <i>BaseInteractable</i> script and its derived classes. 
+                These interactables have two functions, <i>TryInteractPlayer</i> and <i>TryInteractSpirit</i>.
+                These functions can then be overridden with the behaviour needed.
+                Some examples of this are: picking up collectables, and the spirit possessing objects.
+            </p>
+        </div>
+        <div class="MediaWrapper">
+            <video autoplay loop muted playsinline src="../Images/Projects/Frightline/Interaction.webm"></video> <!-- Add Poster? -->
+        </div>
+    </div>
+
+    <div class="DescriptionPart">
+        <div>
+            <h3>Audio & FMOD</h3>
+            <p> On top of the main ideas for the player and interacting, I also had a lot to do with the audio integration using FMOD.
+                This work includes making systems for <b>dynamic player audio and music</b>.
+                The music works by having two audio tracks, one for the current music and the other for the next music.
+                When a track is playing and you queue another, it fades out the first track and fades in the other, in order to <b>give the player a more seamless experience</b>.
+                The dynamic player audio is a bit more involved.
+                I made scriptable objects for <i>SoundCollections</i> that have references to FMOD events for footsteps, jumping, landing and crawling sounds.
+                These different collections are then selected by a raycast from the player to check what surface it is currently standing on, <b>to help with player immersion</b>.
+                <br><br>
+                Additionally, I also made a lot of contributions in the FMOD studio project too.
+                Mixing some of the audio, setting up snapshots and VCAs, and helping with paramaters. 
+            </p>
+        </div>
+        <div class="MediaWrapper">
+            <video autoplay loop muted playsinline src="../Images/Projects/Frightline/SillyWalking.webm"></video> <!-- Add Poster? -->
+        </div>
+    </div>
+
+    <div class="DescriptionPart">
+        <div>
+            <h3>Animation Controller & Inverse Kinematics</h3>
+            <p> The results we got with the animation controller is something I'm proud of.
+                It obviously includes the necessary animations for idling, moving, jumping, etc.
+                Where it really shines is all of the smaller details with it.
+                Some examples are, setting up animation events to play footstep sounds when the feet actually touch the ground;
+                making the player shiver after idling for a while, and sitting down to sleep if they're idle even longer;
+                and adding vfx for the player's breath when shivering, and Zs when he's sleeping.
+                <br><br>
+                Furthermore, to make the player <b>feel even more alive</b>, I decided to and add inverse kinematics to his arms and legs, and targeting for his head.
+                The targeting for his head just makes him look towards points of interests that are marked with game objects.
+                The inverse kinematics for his arms are to make his arms sway when hes balancing on narrower surfaces, like planks.
+                And the inverse kinematics for his legs are to plant his feet on the surfaces of the environment.
+            </p>
+        </div>
+        <div class="MediaWrapper">
+            <img src="../Images/Projects/Frightline/IKs.png" alt="">
+        </div>
+    </div>
+
+    <div class="DescriptionPart">
+        <div>
+            <h3>And more!</h3>
+            <p> In addition to the larger systems I've already mentioned, I also contributed with lots of smaller things here and there when necessary.
+                Such as, making smaller tools for designers, making the interaction UI, bug fixing, and connecting together others' code with my own.
+            </p>
+        </div>
+        <div class="MediaWrapper">
+            <img src="../Images/Projects/Frightline/WelcomeBanner.png" alt="">
+        </div>
+    </div>
+
+</section>
+
+<!-- BODY End -->
+
+<footer>
+    <h2>William Hallberg</h2>
+    
+    <a href="mailto:william.hallberg06@gmail.com">william.hallberg06@gmail.com</h3></a>
+    <a href="tel:+468989139">(+46) 76-898 91 39</a>
+
+    <div class="FooterIconLinks">
+        <a href="https://www.linkedin.com/in/william-hallberg-b600aa290/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="https://wikkha.itch.io/" target="_blank"><i class="fa-brands fa-itch-io"></i></a>
+    </div>
+
+    <div class="PeakImage">
+        <img src="../Images/William_Peak.png" alt="Me drawn as a PEAK scout">
+
+        <div class="SadText">
+            Drawing of me, by
+            <a href="https://www.artstation.com/lil-sinon" target="_blank">Klara Jug</a>
+        </div>
+        
+    </div>
+</footer>
+</body>
+
+</html>

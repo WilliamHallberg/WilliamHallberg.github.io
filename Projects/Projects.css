@@ -30,6 +30,7 @@ h2.ProjectTitle{
     left: 50%;
     top: 30%;
     transform: translateX(-50%) translateY(-50%);
+    text-align: center;
     font-size: 5.2rem;
 }
 
