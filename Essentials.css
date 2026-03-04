@@ -185,7 +185,15 @@ a.SillyClickableArrow{
     }
 }
 
-/* From Uiverse.io by jaykdoe */ 
+@keyframes bounce-effect {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(calc(-2rem)); }
+}
+
+.animate-bounce {
+  animation: bounce-effect 0.25s ease-in-out;
+}
+
 .container {
     height: 100%;
     width: 100%;
