@@ -52,13 +52,16 @@ h1{
 }
 
 .ProjectsContainer{
+    width: 90%;
     position: relative;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: max-content;
+    display: flex;
+    flex-wrap: wrap;
     justify-content: center;
-    width: 100%;
     gap: 6rem;
+}
+
+.ProjectsContainer a{
+    width: fit-content;
 }
 
 .ProjectsContainer .ProjectImage{
@@ -88,6 +91,7 @@ h1{
 }
 
 .ProjectBackground{
+    width: fit-content;
     position: relative;
     color: var(--TextColor);
     text-decoration: none;
