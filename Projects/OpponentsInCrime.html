@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>William Hallberg - Portfolio</title>
+    <link rel="icon" type="image/png" href="../Images/William_Icon.png">
+
+    <link rel="stylesheet" href="../Essentials.css">
+    <link rel="stylesheet" href="Projects.css">
+    
+    <script src="https://kit.fontawesome.com/5a78fd3e4e.js" crossorigin="anonymous"></script>
+    <script src="../Essentials.js" defer></script>
+</head>
+
+<body>
+<header id="NavBar">
+    <h1 class="TitleName">William Hallberg</h1>
+
+    <div class="NavItems NavBarContainer">
+        <a href="../#" class="NavItem">home</a>
+        <a href="../#Projects" class="NavItem">projects</a>
+        <a href="../AboutMe.html" class="NavItem">about me</a>
+    </div> 
+    
+    <div class="NavLinks NavBarContainer">
+        <a href="https://www.linkedin.com/in/william-hallberg-b600aa290/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="https://wikkha.itch.io/" target="_blank"><i class="fa-brands fa-itch-io"></i></a>
+    </div>
+</header>
+
+<!-- BODY Start -->
+
+<section id="Welcome">
+
+    <img src="../Images/Projects/Opponents/WelcomeBanner.png" alt="" class="BackgroundImage" id="ParallaxBanner">
+
+    <a href="#ProjectDescription" class="SillyClickableArrow" ><i class="fa-solid fa-arrow-down" id="DownArrow"></i></a>
+
+    <h2 class="ProjectTitle">Opponents In Crime</h2>
+
+    <div class="SillyGrid">
+        <div class="ProjectInformationContainer">
+            <h2 class="SmallerTitle">Info</h2>
+            <div class="ProjectInformation">
+                <h3>Genre:</h3>         <h3>Online Party Looter</h3>
+                <h3>Engine:</h3>        <h3>Unreal Engine 5</h3>
+                <h3>Platform(s):</h3>   <h3>PC, PS5</h3>
+                <h3>Team Size:</h3>     <h3>18</h3>
+                <h3>Duration:</h3>      <h3>9 Weeks</h3>
+            </div>
+        </div>
+
+        <div class="ProjectInformationContainer">
+            <div class="ProjectDescription">
+                <h2 class="SmallerTitle">Project Overview</h2>
+                <p> Opponents In Crime was our second <b>game project</b> at <i>PlaygroundSquad</i>.
+                    It is an online multiplayer party looter, where up to 4 players compete to see who can steal the most art.
+                    Fighting both against the clock, but also the environment and against each other.
+                </p>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+<section id="ProjectDescription" class="container">
+
+    <div id="stars"></div>
+    <div id="stars2"></div>
+    <div id="stars3"></div>
+
+    <div class="DescriptionPart">
+        <div>
+            <h3>Networking</h3>
+            <p> As the <b>main person in charge of networking</b>, I was tasked with researching and implementing the multiplayer aspect of the game.
+                This research lead us to use the <i>advanced sessions</i> plugin and its steam extention.
+                Which, in turn, gave me a stable ground to implement the creation, joining and destruction of sessions on.
+                <br><br>
+                On top of just making the clients be able to connect to each other, a lot of work also went into the replication and syncing of events.
+                This not only meant me making the features I implemented multiplayer compatible, it also meant <b>helping and supporting the rest of the team</b>.
+                Walking through the process to futher their understanding, but also lending a hand when they felt stuck.
+            </p>
+        </div>
+        <div class="MediaWrapper">
+            <video autoplay loop muted playsinline src="../Images/Projects/Opponents/Multiplayer.webm"></video> <!-- Add Poster? -->
+        </div>
+    </div>
+
+    <div class="DescriptionPart">
+        <div>
+            <h3>Player</h3>
+            <p> I was also <b>the main person in charge of the player</b>.
+                This meant both <b>making things myself</b>, like movement, interactions and handling replication, but also <b>integrating and handling systems made by others</b>.
+                A great example of this is our stamina system.
+                The base was created by one of our designers and then later passed on to me.
+                I then took care of implementing the system into the rest of the player, making stamina drain and recharge when applicable.
+            </p>
+        </div>
+        <div class="MediaWrapper">
+            <video autoplay loop muted playsinline src="../Images/Projects/Opponents/Video1.webm"></video> <!-- Add Poster? -->
+        </div>
+    </div>
+
+    <div class="DescriptionPart">
+        <div>
+            <h3>General Gameplay</h3>
+            <p> Furthermore, I was in charge of a lot of the <b>gameplay features</b> seen in the game.
+                Especially the ones that are more closely knit together with the player.
+                These included, but are not limited to: the picking up, dropping, and throwing of art pieces; shoving and knocking down players, along with getting back up; and movement debuffs such as inverted controls, slipperiness, and "drunken swaying".
+            </p>
+        </div>
+        <div class="MediaWrapper">
+            <video autoplay loop muted playsinline src="../Images/Projects/Opponents/Video2.webm"></video> <!-- Add Poster? -->
+        </div>
+    </div>
+
+    <div class="DescriptionPart">
+        <div>
+            <h3>And more!</h3>
+            <p> Beyond the more core systems, I also contributed with lots of smaller things here and there when necessary.
+                Such as, UI work pertaining to gameplay, character customization, and lots of bug fixing.
+            </p>
+        </div>
+        <div class="MediaWrapper">
+            <img src="../Images/Projects/Opponents/Title.png" alt="">
+        </div>
+    </div>
+
+</section>
+
+<!-- BODY End -->
+
+<footer>
+    <h2>William Hallberg</h2>
+    
+    <a href="mailto:william.hallberg06@gmail.com">william.hallberg06@gmail.com</h3></a>
+    <a href="tel:+468989139">(+46) 76-898 91 39</a>
+
+    <div class="FooterIconLinks">
+        <a href="https://www.linkedin.com/in/william-hallberg-b600aa290/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="https://wikkha.itch.io/" target="_blank"><i class="fa-brands fa-itch-io"></i></a>
+    </div>
+
+    <div class="PeakImage">
+        <img src="../Images/William_Peak.png" alt="Me drawn as a PEAK scout" id="PeakImage">
+
+        <div class="SadText">
+            Drawing of me, by
+            <a href="https://www.artstation.com/lil-sinon" target="_blank">Klara Jug</a>
+        </div>
+        
+    </div>
+</footer>
+</body>
+
+</html>

@@ -53,6 +53,7 @@ h1{
 
 .ProjectsContainer{
     width: 90%;
+    max-width: calc((48rem + 6rem) * 3);
     position: relative;
     display: flex;
     flex-wrap: wrap;
