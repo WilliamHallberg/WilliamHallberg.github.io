@@ -10,11 +10,13 @@ window.onscroll = function()
     if (scrollPos > 60)
     {
         nav.classList.add("shrink");
+        if(arr)
         arr.classList.add("Hidden");
     }
     else if (scrollPos < 20)
     {
         nav.classList.remove("shrink");
+        if(arr)
         arr.classList.remove("Hidden");
     }
 };
@@ -22,6 +24,7 @@ window.onscroll = function()
 window.addEventListener('scroll', function() {
     let value = window.scrollY;
     
+    if(img)
     img.style.transform = `translateY(${value * 0.25}px)`; 
 });
 

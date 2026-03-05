@@ -44,7 +44,8 @@ div.SillyGrid{
 }
 
 div.ProjectInformationContainer{
-    background-color: color-mix(in srgb, var(--SecondaryColor), transparent 30%);
+    background-color: color-mix(in srgb, var(--SecondaryColor), transparent 25%);
+    border: 1px solid color-mix(in srgb, var(--SecondaryColor), transparent 0%);
     border-radius: 1rem;
     padding: 3rem 4rem;
     height: fit-content;
@@ -84,12 +85,12 @@ div.SillyClass{
     align-items: center;
     gap: 5rem;
     border-top: .5rem solid var(--AccentColor);
-    border-bottom: .5rem solid var(--AccentColor);
 }
 
 .DescriptionPart{
-    background-color: color-mix(in srgb, var(--PrimaryColor), transparent 50%);
+    background-color: color-mix(in srgb, var(--PrimaryColor), transparent 25%);
     backdrop-filter: blur(.25rem);
+    border: 1px solid color-mix(in srgb, var(--PrimaryColor), transparent 0%);
     border-radius: 1rem;
     padding: 3rem 4rem;
     width: 80%;

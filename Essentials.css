@@ -99,6 +99,7 @@ footer {
     gap: 2rem;
     padding: 4rem;
     position: relative;
+    border-top: .5rem solid var(--AccentColor);
 }
 
 footer h2 {
@@ -199,6 +200,7 @@ a.SillyClickableArrow{
     width: 100%;
     background: radial-gradient(ellipse at bottom, #1a2025 0%, #2a3138 50%);
     overflow: hidden;
+    position: relative;
 }
 
 #stars {
