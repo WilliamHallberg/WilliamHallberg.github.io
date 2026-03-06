@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>William Hallberg - Portfolio</title>
+    <link rel="icon" type="image/png" href="../Images/William_Icon.png">
+
+    <link rel="stylesheet" href="../Essentials.css">
+    <link rel="stylesheet" href="Projects.css">
+    
+    <script src="https://kit.fontawesome.com/5a78fd3e4e.js" crossorigin="anonymous"></script>
+    <script src="../Essentials.js" defer></script>
+</head>
+
+<body>
+<header id="NavBar">
+    <h1 class="TitleName">William Hallberg</h1>
+
+    <div class="NavItems NavBarContainer">
+        <a href="../#" class="NavItem">home</a>
+        <a href="../#Projects" class="NavItem">projects</a>
+        <a href="../AboutMe.html" class="NavItem">about me</a>
+    </div> 
+    
+    <div class="NavLinks NavBarContainer">
+        <a href="https://www.linkedin.com/in/william-hallberg-b600aa290/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="https://wikkha.itch.io/" target="_blank"><i class="fa-brands fa-itch-io"></i></a>
+    </div>
+</header>
+
+<!-- BODY Start -->
+
+<section id="Welcome">
+
+    <img src="../Images/Projects/SlipUpNSlide/WelcomeBanner.png" alt="" class="BackgroundImage" id="ParallaxBanner">
+
+    <a href="#ProjectDescription" class="SillyClickableArrow" ><i class="fa-solid fa-arrow-down" id="DownArrow"></i></a>
+
+    <h2 class="ProjectTitle">Slip-Up N Slide</h2>
+
+    <div class="SillyGrid">
+        <div class="ProjectInformationContainer">
+            <h2 class="SmallerTitle">Info</h2>
+            <div class="ProjectInformation">
+                <h3>Genre:</h3>         <h3>Party Racing</h3>
+                <h3>Engine:</h3>        <h3>Tengine</h3>
+                <h3>Platform(s):</h3>   <h3>PC, PS5</h3>
+                <h3>Team Size:</h3>     <h3>12</h3>
+                <h3>Duration:</h3>      <h3>6 Weeks</h3>
+            </div>
+        </div>
+
+        <div class="ProjectInformationContainer">
+            <div class="ProjectDescription">
+                <h2 class="SmallerTitle">Project Overview</h2>
+                <p> Slip-Up N Slide was our first <b>game project</b> at <i>PlaygroundSquad</i>, made in the school's in-house engine (C++).
+                    Slip-Up N Slide is a chaotic split screen multiplayer racing game where players compete as penguins, trying to cross the finish line as quickly as possible.
+                    Finding their own path down a slippery track with chaotic physics and interactive hazards.
+                </p>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+<section id="ProjectDescription" class="container">
+
+    <div id="stars"></div>
+    <div id="stars2"></div>
+    <div id="stars3"></div>
+
+    <div class="DescriptionPart">
+        <div>
+            <h3>Player Controller</h3>
+            <p> Since the game was made in a very <b>bare-bones engine</b>, everything had to be made from scratch.
+                And for the player controller, that meant setting up a physics engine, attaching a visual model to the physics shape, applying forces and playing animations.
+                Furthermore, this also meant making ImGui settings so that the designers could easily iterate the speed and feel of the character.
+            </p>
+        </div>
+        <div class="MediaWrapper">
+            <video autoplay loop muted playsinline src="../Images/Projects/SlipUpNSlide/SlipUp1.mp4"></video> <!-- Add Poster? -->
+        </div>
+    </div>
+
+    <div class="DescriptionPart">
+        <div>
+            <h3>Jolt Physics</h3>
+            <p> The initial setup of <i>jolt</i> was not made by me, but I ended up being the main person responsible for <b>implementing physics-based gameplay</b>.
+                A big part of my work was making sure the physics worked as expected.
+                This meant: parsing collider data and turning it into a physics collider;
+                creating the shape for the player and attaching it to the controller;
+                and tweaking settings such as friction.
+            </p>
+        </div>
+        <div class="MediaWrapper">
+            <video autoplay loop muted playsinline src="../Images/Projects/SlipUpNSlide/SlipUp2.mp4"></video> <!-- Add Poster? -->
+        </div>
+    </div>
+
+    <div class="DescriptionPart">
+        <div>
+            <h3>And More!</h3>
+            <p> On top of the things I already mentioned, I also did lots of other work.
+                This includes, the in-world main menu, a <i>SFX</i> manager, a <i>VFX</i> manager, and bug fixing, lots and lots of bug fixing.
+            </p>
+        </div>
+        <div class="MediaWrapper">
+            <img src="../Images/Projects/SlipUpNSlide/WelcomeBanner.png" alt="">
+        </div>
+    </div>
+
+</section>
+
+<!-- BODY End -->
+
+<footer>
+    <h2>William Hallberg</h2>
+    
+    <a href="mailto:william.hallberg06@gmail.com">william.hallberg06@gmail.com</h3></a>
+    <a href="tel:+468989139">(+46) 76-898 91 39</a>
+
+    <div class="FooterIconLinks">
+        <a href="https://www.linkedin.com/in/william-hallberg-b600aa290/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="https://wikkha.itch.io/" target="_blank"><i class="fa-brands fa-itch-io"></i></a>
+    </div>
+
+    <div class="PeakImage">
+        <img src="../Images/William_Peak.png" alt="Me drawn as a PEAK scout" id="PeakImage">
+
+        <div class="SadText">
+            Drawing of me, by
+            <a href="https://www.artstation.com/lil-sinon" target="_blank">Klara Jug</a>
+        </div>
+        
+    </div>
+</footer>
+</body>
+
+</html>
