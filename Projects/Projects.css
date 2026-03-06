@@ -59,6 +59,7 @@ div.ProjectInformationContainer h2{
 
 div.ProjectInformationContainer h3, div.ProjectInformationContainer p{
     font-size: 2.4rem;
+    text-align: justify;
 }
 
 div.ProjectInformationContainer .ProjectInformation{
